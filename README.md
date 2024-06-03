@@ -40,6 +40,7 @@ Adjustments to LD_LIBRARY_PATH
 
 
 Statistical analyses:
+
     .
     ├── bb_struct_reorg.R                             <-- reformats structural estimates from FreeSurfer 
     ├── bb_dwi_reorg_r4.R                             <-- reformats diffusion estimates from py(Baby)AFQ
