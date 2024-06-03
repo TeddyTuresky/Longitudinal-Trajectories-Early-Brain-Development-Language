@@ -44,8 +44,8 @@ Statistical analyses:
     .
     ├── bb_struct_reorg.R                             <-- reformats structural estimates from FreeSurfer 
     ├── bb_dwi_reorg_r4.R                             <-- reformats diffusion estimates from py(Baby)AFQ
-    ├── longitudinal_model_control.R                  <-- performs longitudinal modelling, including data cleaning, curve fitting and visualizations, and associations with outcomes
-        ├── model_funs.R                              <-- runs longitudinal models: linear, logarithmic, quadratic, or asymptotic
+    ├── longitudinal_model_control.R                  <-- set paramaters for statistical analyses visualizations
+        ├── model_funs.R                              <-- runs longitudinal models - linear, logarithmic, quadratic, or asymptotic - including data cleaning, curve fitting and visualizations, and associations with outcomes
         ├── graph_labels_colors.R                     <-- specifies colors used in graphs
         ├── gen_heatmap.R                             <-- runs heatmaps depicting covariate contributions to models
         ├── compare_models_fun.R                      <-- compares fits among longitudinal models (does not include asymptotic functions)
