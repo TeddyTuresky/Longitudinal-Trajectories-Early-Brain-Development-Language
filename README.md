@@ -4,27 +4,28 @@ This repository houses code (or links to code) used for the following study:
 
     Turesky et al. Longitudinal trajectories of brain development from infancy to school-age and their relationship to language skill
 
-Broadly, the study involved structural and diffusion processing pipelines followed by statistical analyses. An inventories of the code used for each pipeline are outlined below:
+Broadly, the study involved structural and diffusion processing pipelines followed by statistical analyses. An inventory of the code used for each pipeline is provided below:
 
-Structure:
-
+# Structure:
 
     .
-    ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses diffusion data and runs fiber tracking
-        ├── vista_preprocessing.m                     <-- aligns diffusion and T1 images
-        ├── mrtrix2babyAFQ.m                          <-- runs AFQ fiber segmentation
-            ├── dti_end_tract.m                       <-- converts MRtrix .tck file to WholeBrainFG.mat for AFQ fiber segmentation
-    ├── babyAFQ_est_vis.m                          <-- generates tract profiles with diffusion estimates and visualizations for figures
-    ├── nonpar_boot_sp_corr.m                         <-- runs semipartial correlations (code fragments taken from https://github.com/yeatmanlab/AFQ) 
-    ├── AFQ_MultiCompCorrectionSemiPartSpearman.m     <-- runs multiple comparison corrections for brain-behavior relations, adjusted from https://github.com/yeatmanlab/AFQ
-    ├── hleMedsOpen.R                                 <-- tests for mediation
+    ├── reFS.sh                                 <-- runs infant brain morphometry pipeline
+        ├── iFS_wrap.sh                         <-- sets environmental variables for iFS and runs it \*this file will need adjustments based on the user's compute setup
+        ├── ibeat2aseg.m                        <-- merges iFS and iBEATv2.0 tissue segmentations
+            ├── aseg_labels2coords.m            <-- converts aseg labels to coordinates
+        ├── aseg2wm.m                           <-- generates FS white matter file using iBEATv2.0 segmentation
+        ├── fs_autorecon2_end.sh                <-- runs FS autorecon2 with adjustments
+        ├── fs_autorecon3_wrap.sh               <-- runs FS autorecon3 with adjustments (uses expert.opts file included)
+    ├── consol_stats.sh                         <-- tabulates brain estimates in preparation for statistical analysis
 
 
+Requires iBEATv2.0 (https://github.com/iBEAT-V2/iBEAT-V2.0-Docker) segmentations be generated beforehand. 
+
+Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab.
+The folder containing the above scripts also need to be added to your shell PATH. 
 
 
-
-
-Diffusion:
+# Diffusion:
 
     .
     ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses diffusion data and runs fiber tracking
@@ -35,21 +36,13 @@ Diffusion:
     ├── plot_viz_inf_cam_ltrk_core_r2.py                             <-- visualizes tract cores 
 
 
+Requires FreeSurfer-style T1 segmentation be generated beforehand.
+
+Dependences: MRtrix3, FSL, ANTs, FreeSurfer, GCC libraries for LD_LIBRARY_PATH, pyAFQ
+The folder containing the above scripts also need to be added to your shell PATH. Additionally, our first script (indirectly) calls the cuda implementation of eddy, which also requires access to a GPU (we used Nvidia A100). 
 
 
-The scripts enclosed in this repository rely on the following packages:
-. MRtrix3
-. FSL
-. ANTs
-. FreeSurfer
-
-Adjustments to LD_LIBRARY_PATH
-. GCC libraries
-
-The folder containing the above scripts also need to be added to your shell PATH. Additionally, our scripts (indirectly) calls the cuda implementation of eddy, which also requires access to a GPU (we used Nvidia A100).
-
-
-Statistical analyses:
+# Statistical analyses:
 
     .
     ├── bb_struct_reorg.R                             <-- reformats structural estimates from FreeSurfer 
