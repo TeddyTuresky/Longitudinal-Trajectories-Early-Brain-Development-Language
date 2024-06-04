@@ -6,7 +6,7 @@ This repository houses code (or links to code) used for the following study:
 
 Broadly, the study involved structural and diffusion processing pipelines followed by statistical analyses. An inventory of the code used for each pipeline is provided below:
 
-# Structure:
+### Structure:
 
     .
     ├── reFS.sh                                 <-- runs infant brain morphometry pipeline
