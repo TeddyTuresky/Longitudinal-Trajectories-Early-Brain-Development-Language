@@ -10,7 +10,7 @@ Structure:
 
 
     .
-    ├── diffusion_pipeline_gen.sh                     <-- generates tract reconstructions from raw diffusion images using MRTrix, VistaSoft, and AFQ
+    ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses diffusion data and runs fiber tracking
         ├── vista_preprocessing.m                     <-- aligns diffusion and T1 images
         ├── mrtrix2babyAFQ.m                          <-- runs AFQ fiber segmentation
             ├── dti_end_tract.m                       <-- converts MRtrix .tck file to WholeBrainFG.mat for AFQ fiber segmentation
@@ -21,22 +21,32 @@ Structure:
 
 
 
+
+
+
 Diffusion:
+
+    .
+    ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses diffusion data and runs fiber tracking
+    ├── mrtrix2bids_sep.sh                         <-- reorganizing directory structure to prepare for py(Baby)AFQ
+    ├── baby-pyafq-gen.py                          <-- bids_path needs to be entered 
+    ├── pyafq-gen.py                               <-- bids_path needs to be entered 
+    ├── plot_viz_inf_cam_(l/r)trk_core.py                             <-- visualizes tracts 
+    ├── plot_viz_inf_cam_ltrk_core_r2.py                             <-- visualizes tract cores 
+
+
 
 
 The scripts enclosed in this repository rely on the following packages:
-. Mrtrix3 | Mrtrix3Tissue
-
-. Matlab R2021a and the following packages (the following order of priority helps):
-. . Vistasoft
-
-
-Dependences for optional calls
-. acpcdetect
-
+. MRtrix3
+. FSL
+. ANTs
+. FreeSurfer
 
 Adjustments to LD_LIBRARY_PATH
 . GCC libraries
+
+The folder containing the above scripts also need to be added to your shell PATH. Additionally, our scripts (indirectly) calls the cuda implementation of eddy, which also requires access to a GPU (we used Nvidia A100).
 
 
 Statistical analyses:
