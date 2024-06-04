@@ -25,7 +25,7 @@ Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab.
 The folder containing the above scripts also need to be added to your shell PATH. 
 
 
-# Diffusion:
+### Diffusion:
 
     .
     ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses diffusion data and runs fiber tracking
@@ -42,7 +42,7 @@ Dependences: MRtrix3, FSL, ANTs, FreeSurfer, GCC libraries for LD_LIBRARY_PATH, 
 The folder containing the above scripts also need to be added to your shell PATH. Additionally, our first script (indirectly) calls the cuda implementation of eddy, which also requires access to a GPU (we used Nvidia A100). 
 
 
-# Statistical analyses:
+### Statistical analyses:
 
     .
     ├── bb_struct_reorg.R                             <-- reformats structural estimates from FreeSurfer 
