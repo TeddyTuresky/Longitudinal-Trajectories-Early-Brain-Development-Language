@@ -10,7 +10,7 @@ Broadly, the study involved structural and diffusion processing pipelines follow
 
     .
     ├── reFS.sh                                 <-- runs infant brain morphometry pipeline
-        ├── iFS_wrap.sh                         <-- sets environmental variables for iFS and runs it \*this file will need adjustments based on the user's compute setup
+        ├── iFS_wrap.sh                         <-- sets environmental variables for iFS and runs it *this file will need adjustments based on the user's compute setup
         ├── ibeat2aseg.m                        <-- merges iFS and iBEATv2.0 tissue segmentations
             ├── aseg_labels2coords.m            <-- converts aseg labels to coordinates
         ├── aseg2wm.m                           <-- generates FS white matter file using iBEATv2.0 segmentation
