@@ -16,7 +16,8 @@ Broadly, the study involved structural and diffusion processing pipelines follow
         ├── aseg2wm.m                           <-- generates FS white matter file using iBEATv2.0 segmentation
         ├── fs_autorecon2_end.sh                <-- runs FS autorecon2 with adjustments
         ├── fs_autorecon3_wrap.sh               <-- runs FS autorecon3 with adjustments, uses expert.opts file included
-    ├── consol_stats.sh                         <-- tabulates brain estimates in preparation for statistical analysis
+    ├── consol_stats.sh                         <-- consolidates structural estimates from FS 
+    ├── struct_reorg.R                          <-- reorganizes structural estimates
 
 
 Requires iBEATv2.0 (https://github.com/iBEAT-V2/iBEAT-V2.0-Docker) segmentations be generated beforehand. 
@@ -33,8 +34,9 @@ The folder containing the above scripts also need to be added to your shell PATH
     ├── baby-pyafq-gen.py                          <-- runs tract segmentation for pyBabyAFQ, bids_path needs to be entered in file
     ├── pyafq-gen.py                               <-- runs tract segmenation for pyAFQ, bids_path needs to be entered in file
     ├── plot_viz_inf_cam_trk.py                    <-- visualizes tracts; code adapted from https://yeatmanlab.github.io/pyAFQ/
-    ├── plot_viz_inf_cam_trk_core_nodes.py         <-- visualizes tract cores with significant nodes, code adapted from https://yeatmanlab.github.io/pyAFQ/
-
+    ├── plot_viz_inf_cam_trk_core_nodes.py         <-- visualizes tract cores with significant nodes, code adapted from https://yeatmanlab.github.io/pyAFQ
+    ├── consol_nodes.sh                            <-- consolidates diffusion estimates from py(Baby)AFQ
+    ├── dwi_reorg.R                                <-- reorganizes diffusion estimates
 
 Requires FreeSurfer-style T1 segmentation be generated beforehand.
 
@@ -45,8 +47,6 @@ The folder containing the above scripts also need to be added to your shell PATH
 ### 3. Statistics:
 
     .
-    ├── struct_reorg.R                          <-- reformats structural estimates from FreeSurfer 
-    ├── dwi_reorg.R                             <-- reformats diffusion estimates from py(Baby)AFQ
     ├── longitudinal_model_control.R            <-- set paramaters for statistical analyses visualizations
         ├── model_funs.R                        <-- runs longitudinal models - linear, logarithmic, quadratic, or asymptotic - including data cleaning, curve fitting and visualizations, and associations with outcomes
         ├── graph_labels_colors.R               <-- specifies colors used in graphs
