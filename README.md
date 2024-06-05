@@ -15,7 +15,7 @@ Broadly, the study involved structural and diffusion processing pipelines follow
             ├── aseg_labels2coords.m            <-- converts aseg labels to coordinates
         ├── aseg2wm.m                           <-- generates FS white matter file using iBEATv2.0 segmentation
         ├── fs_autorecon2_end.sh                <-- runs FS autorecon2 with adjustments
-        ├── fs_autorecon3_wrap.sh               <-- runs FS autorecon3 with adjustments (uses expert.opts file included)
+        ├── fs_autorecon3_wrap.sh               <-- runs FS autorecon3 with adjustments, uses expert.opts file included
     ├── consol_stats.sh                         <-- tabulates brain estimates in preparation for statistical analysis
 
 
@@ -51,11 +51,11 @@ The folder containing the above scripts also need to be added to your shell PATH
         ├── model_funs.R                        <-- runs longitudinal models - linear, logarithmic, quadratic, or asymptotic - including data cleaning, curve fitting and visualizations, and associations with outcomes
         ├── graph_labels_colors.R               <-- specifies colors used in graphs
         ├── gen_heatmap.R                       <-- runs heatmaps depicting covariate contributions to models
-        ├── compare_models_fun.R                <-- compares fits among longitudinal models (does not include asymptotic functions)
+        ├── compare_models_fun.R                <-- compares fits among longitudinal models, does not include asymptotic functions
         ├── MSU_functions.R                     <-- leverages a subset of functions provided here: https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood (asymptotic models only)
-        ├── long_model_report_stats.R           <-- generates and reports statistics corrected for multiple comparisons (for structural and average- or quarter-based diffusion analyses)  
-        ├── diff_node_clust.R                   <-- generates and reports statistics corrected for multiple comparisons (for node-based diffusion analyses)
-        ├── brain_region_ggseg.R                <-- depicts significant brain regions (for structure only)
+        ├── long_model_report_stats.R           <-- generates and reports statistics corrected for multiple comparisons, for structural and average- or quarter-based diffusion analyses
+        ├── diff_node_clust.R                   <-- generates and reports statistics corrected for multiple comparisons, for node-based diffusion analyses
+        ├── brain_region_ggseg.R                <-- depicts significant brain regions, for structure only
         ├── long_graph.R                        <-- generates graph showing longitudinal sample
         ├── long_descriptive_stats.R            <-- reports descriptive stats for study
 
