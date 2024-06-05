@@ -6,7 +6,7 @@ This repository houses code (or links to code) used for the following study:
 
 Broadly, the study involved structural and diffusion processing pipelines followed by statistical analyses. An inventory of the code used for each pipeline is provided below:
 
-### Structure:
+### 1. Structure:
 
     .
     ├── reFS.sh                                 <-- runs infant brain morphometry pipeline
@@ -25,7 +25,7 @@ Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab.
 The folder containing the above scripts also need to be added to your shell PATH. 
 
 
-### Diffusion:
+### 2. Diffusion:
 
     .
     ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses data and runs fiber tracking, *uses eddy_cuda, which requires an slspec file be created in advance, please see FSL documentation
@@ -42,7 +42,7 @@ Dependences: MRtrix3, FSL, ANTs, FreeSurfer, GCC libraries for LD_LIBRARY_PATH, 
 The folder containing the above scripts also need to be added to your shell PATH. Additionally, our first script (indirectly) calls the cuda implementation of eddy, which also requires access to a GPU (we used Nvidia A100). 
 
 
-### Statistics:
+### 3. Statistics:
 
     .
     ├── struct_reorg.R                          <-- reformats structural estimates from FreeSurfer 
