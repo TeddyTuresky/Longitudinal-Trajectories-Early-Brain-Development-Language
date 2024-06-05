@@ -28,12 +28,12 @@ The folder containing the above scripts also need to be added to your shell PATH
 ### Diffusion:
 
     .
-    ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses diffusion data and runs fiber tracking
-    ├── mrtrix2bids_sep.sh                         <-- reorganizing directory structure to prepare for py(Baby)AFQ
-    ├── baby-pyafq-gen.py                          <-- bids_path needs to be entered 
-    ├── pyafq-gen.py                               <-- bids_path needs to be entered 
-    ├── plot_viz_inf_cam_(l/r)trk_core.py                             <-- visualizes tracts 
-    ├── plot_viz_inf_cam_ltrk_core_r2.py                             <-- visualizes tract cores 
+    ├── dwi_proc_tck_gen_v2.sh                     <-- preprocesses data and runs fiber tracking, *uses eddy_cuda, which requires an slspec file be created in advance, please see FSL documentation
+    ├── mrtrix2bids_sep.sh                         <-- reorganizes directory structure to prepare for py(Baby)AFQ
+    ├── baby-pyafq-gen.py                          <-- runs tract segmentation for pyBabyAFQ, bids_path needs to be entered in file
+    ├── pyafq-gen.py                               <-- runs tract segmenation for pyAFQ, bids_path needs to be entered in file
+    ├── plot_viz_inf_cam_trk.py                    <-- visualizes tracts; code adapted from https://yeatmanlab.github.io/pyAFQ/
+    ├── plot_viz_inf_cam_trk_core_nodes.py         <-- visualizes tract cores with significant nodes, code adapted from https://yeatmanlab.github.io/pyAFQ/
 
 
 Requires FreeSurfer-style T1 segmentation be generated beforehand.
