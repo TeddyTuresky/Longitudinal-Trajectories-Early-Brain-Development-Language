@@ -1,4 +1,4 @@
-## Longitudinal-Trajectories-Brain-Development-Language
+## Longitudinal-Trajectories-Early-Brain-Development-Language
 
 This repository houses code (or links to code) used for the following study:
 
