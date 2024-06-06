@@ -19,7 +19,7 @@ Broadly, the study involved structural and diffusion processing pipelines follow
     ├── consol_stats.sh                         <-- consolidates structural estimates from FS 
     ├── struct_reorg.R                          <-- reorganizes structural estimates
 
-Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab.
+Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab. 
 Additional requirements:The folder containing the above scripts also need to be added to your shell PATH, iBEATv2.0 (https://github.com/iBEAT-V2/iBEAT-V2.0-Docker) segmentations need to be generated beforehand.  
 
 
