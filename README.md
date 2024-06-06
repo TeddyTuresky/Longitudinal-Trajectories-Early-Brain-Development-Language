@@ -19,7 +19,7 @@ Broadly, the study involved structural and diffusion processing pipelines follow
     ├── consol_stats.sh                         <-- consolidates structural estimates from FS 
     ├── struct_reorg.R                          <-- reorganizes structural estimates
 
-Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab.  
+Dependencies: iBEATv2.0 Docker, Infant FreeSurfer, FreeSurfer 7.3, Matlab  
 Additional requirements:The folder containing the above scripts also need to be added to your shell PATH, iBEATv2.0 (https://github.com/iBEAT-V2/iBEAT-V2.0-Docker) segmentations need to be generated beforehand.  
 
 
@@ -35,7 +35,7 @@ Additional requirements:The folder containing the above scripts also need to be 
     ├── consol_nodes.sh                            <-- consolidates diffusion estimates from py(Baby)AFQ
     ├── dwi_reorg.R                                <-- reorganizes diffusion estimates
 
-Dependences: MRtrix3, FSL, ANTs, FreeSurfer, GCC libraries for LD_LIBRARY_PATH, pyAFQ
+Dependences: MRtrix3, FSL, ANTs, FreeSurfer, GCC libraries for LD_LIBRARY_PATH, pyAFQ  
 Additional requirements: the folder containing the above scripts needs to be added to your shell PATH, our first script (indirectly) calls the cuda implementation of eddy, which also requires access to a GPU (we used Nvidia A100), FreeSurfer-style T1 segmentation need to be generated beforehand.
 
 
@@ -55,6 +55,6 @@ Additional requirements: the folder containing the above scripts needs to be add
         ├── long_descriptive_stats.R            <-- reports descriptive stats for study
 
 
-Required packages: dplyr, reshape, stringr, ggplot2, ggseg, lme4, lmerTest, nlme, permuco
+Required packages: dplyr, reshape, stringr, ggplot2, ggseg, lme4, lmerTest, nlme, permuco  
 Additional requirements: asymptotic functions also require code supplied here: https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood.
 
