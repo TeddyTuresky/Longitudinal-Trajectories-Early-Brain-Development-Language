@@ -101,7 +101,7 @@ for (m in (1:length(med_names))){
           model.M <- lm(beh ~ brain3, dat4_mat4)
           model.Y <- lm(med ~ beh + brain3, dat4_mat4)
           
-          results <- mediate(model.M, model.Y, treat='brain3', mediator='beh', boot=TRUE, sims=5000)
+          results <- mediate(model.M, model.Y, treat='brain3', mediator='beh', boot=TRUE, sims=10000)
           
           est_meds[i,j] <- results$n0
           ci1_meds[i,j] <- results$n0.ci[[1]]
