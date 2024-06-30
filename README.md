@@ -2,7 +2,7 @@
 
 This repository houses code (or links to code) used for the following study:
 
-    Turesky et al. Longitudinal trajectories of brain development from infancy to school-age and their relationship to language skill
+    Turesky et al. Longitudinal trajectories of brain development from infancy to school age and their relationship to literacy development
 
 Broadly, the study involved structural and diffusion processing pipelines followed by statistical analyses. An inventory of the code used for each pipeline is provided below:
 
