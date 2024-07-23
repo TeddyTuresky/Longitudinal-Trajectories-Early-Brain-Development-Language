@@ -51,6 +51,7 @@ Additional requirements: the folder containing the above scripts needs to be add
         ├── long_model_report_stats.R           <-- generates and reports statistics corrected for multiple comparisons, for structural and average- or quarter-based diffusion analyses
         ├── diff_node_clust.R                   <-- generates and reports statistics corrected for multiple comparisons, for node-based diffusion analyses
         ├── brain_region_ggseg.R                <-- depicts significant brain regions, for structure only
+        ├── long_graph.R                        <-- generates graph average longitudinal trajectories by measure
         ├── long_graph.R                        <-- generates graph showing longitudinal sample
         ├── long_descriptive_stats.R            <-- reports descriptive stats for study
 
