@@ -3,7 +3,7 @@
 # This script runs an infant brain morphometry pipeline using iBEATv2, infant FreeSurfer (iFS), and standard FreeSurfer (FS). The following pipeline assumes that iBEATv2 tissue segmentations have already been generated.
 #   1. Runs FS up to step 15 (https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all#StepDescriptionSummaries)
 #   2. Deletes all files in touch and script folders and wm.mgz and aseg.presurf.mgz files in mri folder
-#   3. Converts FS orig.mgz images to mprage.nii.gz images and set up for iFS 
+#   3. Converts FS orig.mgz images to mprage.nii.gz images and sets up for iFS 
 #   4. Runs iFS in full
 #   5. Merges iFS aseg.nii.gz with iBEATv2 T1-iso-skullstripped-tissue.nii.gz using the Matlab scripts:
 #      a. ibeat2aseg.m - uses tissue labels from iBEATv2 to relabel iFS aseg.nii.gz gray/white matter except for subcortical regions and then writes as aseg.presurf.mgz file in FS mri folder
