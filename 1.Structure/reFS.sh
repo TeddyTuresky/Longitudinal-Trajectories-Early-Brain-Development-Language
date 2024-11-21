@@ -60,6 +60,7 @@ echo Removing files based on initial FS run
 # rm ${fp}/touch/* ${fp}/mri/wm*.mgz ${fp}/mri/aseg.presurf.mgz ${fp}/mri/brain.finalsurfs.mgz # ${fp}/scripts/* 
 rm ${fp}/mri/transforms/* ${fp}/mri/orig_nu.mgz ${fp}/mri/mri_nu_correct.mni.log
 
+
 # Step 3.
 echo Setting up for infant FS
 mkdir -p ${ifp}
