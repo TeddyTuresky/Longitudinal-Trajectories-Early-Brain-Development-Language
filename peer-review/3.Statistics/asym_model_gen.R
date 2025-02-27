@@ -1,4 +1,4 @@
-asym_model_fun <- function(meas, hem, trk, trk_sz, dir_in, other_dat, covariates, regions,
+asym_model_gen <- function(meas, hem, trk, trk_sz, dir_in, other_dat, covariates, regions,
                            beh_names, rating, dV, ctr_str, use_inf, use3, vqc_enigma, rating_vqc){
   
   if (meas == 'wm'){
@@ -685,4 +685,51 @@ asym_model_fun <- function(meas, hem, trk, trk_sz, dir_in, other_dat, covariates
                      're_cor' = re_cor, 'n_beh' = n_beh, 'n_sub_obs' = n_sub_obs)
   return(stats_sum)
   
+}
+
+
+
+# adapted from https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood
+simple_nlme <- function(formula_basic, formula_random, covariates, par_start, het_var, data, max_iter, attempts = 20){
+  data_grouped <- groupedData(formula_basic, data = data)
+  #eval(parse(text = paste0('wts <- varIdent(form = ~ 1 | ', het_var, ')')))
+  s0 <- rep(0, length(covariates))
+  
+  start_list <- list(fixed = c(par_start[1], s0, par_start[2], s0, par_start[3]))
+  model_formula <- as.formula(paste0(all.vars(formula_basic)[1], ' ~ SSasymp(', all.vars(formula_basic)[2], ', asym, r0, lrc)'))
+  fixed_list <- list(as.formula(paste('asym ~ ', paste(covariates, collapse = '+'))), 
+                     as.formula(paste('r0 ~ ', paste(covariates, collapse = '+'))), lrc ~ 1)
+  
+  tmp <- try({nlme(model = model_formula, 
+                   data = data_grouped,
+                   fixed = fixed_list,
+                   random = formula_random,
+                   start = start_list,
+                   control = lmeControl(msMaxIter = max_iter),
+                   #weights = wts,
+                   na.action = na.exclude)}, silent = T)
+  x <- 0
+  while (class(tmp)[1] == 'try-error' & attempts > x) {
+    start_list <- list(fixed = c(par_start[1] + rnorm(1, 0, abs(par_start[1]) * .1), s0, 
+                                 par_start[2] + rnorm(1, 0, abs(par_start[2]) * .1), s0, 
+                                 par_start[3] + rnorm(1, 0, abs(par_start[3]) * .1)))
+    
+    tmp <- try({nlme(model = model_formula, 
+                     data = data_grouped,
+                     fixed = fixed_list,
+                     random = formula_random,
+                     start = start_list,
+                     control = lmeControl(msMaxIter = max_iter),
+                     weights = wts,
+                     na.action = na.exclude)}, silent = T)
+    x <- x + 1
+  }
+  if(class(tmp)[1] == 'try-error'){
+    tmp
+  } else {
+    tmp$call[["model"]] <- model_formula
+    tmp$fixed_list <- fixed_list
+    tmp$formula_random <- formula_random
+    tmp
+  }
 }

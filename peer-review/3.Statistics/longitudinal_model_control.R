@@ -13,15 +13,11 @@ library(lm.beta)
 
 code_location <- dirname(sys.frame(1)$ofile)
 source(paste0(code_location, '/long_mod_gen.R'))
-source(paste0(code_location, '/long_lmer_mods.R'))
-source(paste0(code_location, '/asym_model_fun.R'))
-source(paste0(code_location, '/mod_ages.R'))
-source(paste0(code_location, '/mod_sages.R'))
+source(paste0(code_location, '/asym_model_gen.R'))
+source(paste0(code_location, '/mod_ages_sages.R'))
 source(paste0(code_location, '/graph_labels_colors.R'))
 source(paste0(code_location, '/gen_heatmap.R'))
-source(paste0(code_location, '/compare_models_bic_fun.R'))
-source(paste0(code_location, '/compare_models_fun_covs.R'))
-source(paste0(code_location, '/MSU_functions.R')) # from https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood
+source(paste0(code_location, '/compare_models.R'))
 source(paste0(code_location, '/long_model_report_stats.R'))
 source(paste0(code_location, '/diff_node_clust.R'))
 source(paste0(code_location, '/brain_region_ggseg.R'))
@@ -100,7 +96,7 @@ for (meas in measures){
                      covariates_interaction, cov_var, regions, beh_names, rating, 
                      dV, ctr_str, use_inf, use3, vqc_enigma, rating_vqc)
       } else if (model == 'asym'){
-        asym_model_fun(meas, hem, trk, trk_sz, dir_in, other_dat, covariates, regions,
+        asym_model_gen(meas, hem, trk, trk_sz, dir_in, other_dat, covariates, regions,
             beh_names, rating, dV, ctr_str, use_inf, use3, vqc_enigma, rating_vqc)
       }
    
