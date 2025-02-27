@@ -47,11 +47,11 @@ Additional requirements: the folder containing the above scripts needs to be add
         ├── asym_mod_gen.R                      <-- same as 'long_mod_gen.R' but for nonlinear model with asymptotic functions, leverages a subset of functions provided here: https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood
         ├── graph_labels_colors.R               <-- specifies colors used in graphs
         ├── gen_heatmap.R                       <-- runs heatmaps depicting covariate contributions to models
+        ├── mod_ages_sages.R                    <-- centers and scales age variables if necessary 
         ├── compare_models.R                    <-- compares fits among longitudinal models (does not include asymptotic functions) or among models with versus without select covariates
         ├── long_model_report_stats.R           <-- generates and reports statistics corrected for multiple comparisons, for structural and average- or quarter-based diffusion analyses
         ├── diff_node_clust.R                   <-- generates and reports statistics corrected for multiple comparisons, for node-based diffusion analyses
         ├── brain_region_ggseg.R                <-- depicts significant brain regions, for structure only
-        ├── long_mediate_covs.R                 <-- tests indirect effects between curve features of brain development and reading skills via literacy subskills
         ├── long_mediate_covs.R                 <-- tests indirect effects between curve features of brain development and reading skills via literacy subskills
         ├── graph_all_meas_regs.R               <-- generates graph of average longitudinal trajectories by measure
         ├── long_graph.R                        <-- generates graph showing longitudinal sample
