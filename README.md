@@ -43,19 +43,23 @@ Additional requirements: the folder containing the above scripts needs to be add
 
     .
     ├── longitudinal_model_control.R            <-- set paramaters for statistical analyses visualizations
-        ├── model_funs.R                        <-- runs longitudinal models - linear, logarithmic, quadratic, or asymptotic - including data cleaning, curve fitting and visualizations, and associations with outcomes
+        ├── long_mod_gen.R                      <-- runs linear models with linear, logarithmic, or quadratic functions - including data cleaning, curve fitting and visualizations, and associations with outcomes
+        ├── asym_mod_gen.R                      <-- same as 'long_mod_gen.R' but for nonlinear model with asymptotic functions, leverages a subset of functions provided here: https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood
         ├── graph_labels_colors.R               <-- specifies colors used in graphs
         ├── gen_heatmap.R                       <-- runs heatmaps depicting covariate contributions to models
-        ├── compare_models_fun.R                <-- compares fits among longitudinal models, does not include asymptotic functions
-        ├── MSU_functions.R                     <-- leverages a subset of functions provided here: https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood (asymptotic models only)
+        ├── compare_models.R                    <-- compares fits among longitudinal models (does not include asymptotic functions) or among models with versus without select covariates
         ├── long_model_report_stats.R           <-- generates and reports statistics corrected for multiple comparisons, for structural and average- or quarter-based diffusion analyses
         ├── diff_node_clust.R                   <-- generates and reports statistics corrected for multiple comparisons, for node-based diffusion analyses
         ├── brain_region_ggseg.R                <-- depicts significant brain regions, for structure only
+        ├── long_mediate_covs.R                 <-- tests indirect effects between curve features of brain development and reading skills via literacy subskills
+        ├── long_mediate_covs.R                 <-- tests indirect effects between curve features of brain development and reading skills via literacy subskills
         ├── graph_all_meas_regs.R               <-- generates graph of average longitudinal trajectories by measure
         ├── long_graph.R                        <-- generates graph showing longitudinal sample
         ├── long_descriptive_stats.R            <-- reports descriptive stats for study
+        ├── long_cov_beh_corr.R                 <-- tests and reports (partial) correlations among covariates and behavioral measures
+        ├── gen_histograms_spec.R               <-- generates histograms for brain, behavioral, and demographic measures
 
 
-Required packages: dplyr, reshape, stringr, ggplot2, ggseg, lme4, lmerTest, nlme, permuco  
+Required packages: dplyr, reshape, stringr, ggplot2, ggseg, lm.beta, lme4, lmerTest, nlme, mediation, permuco
 Additional requirements: asymptotic functions also require code supplied here: https://github.com/knickmeyer-lab/ORIGINs_ICV-and-Subcortical-volume-development-in-early-childhood.
 
