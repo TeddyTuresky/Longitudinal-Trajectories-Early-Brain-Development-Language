@@ -13,7 +13,7 @@ library(lm.beta)
 
 code_location <- dirname(sys.frame(1)$ofile)
 source(paste0(code_location, '/long_mod_gen.R'))
-source(paste0(code_location, '/asym_model_gen.R'))
+source(paste0(code_location, '/asym_mod_gen.R'))
 source(paste0(code_location, '/mod_ages_sages.R'))
 source(paste0(code_location, '/graph_labels_colors.R'))
 source(paste0(code_location, '/gen_heatmap.R'))
@@ -22,7 +22,7 @@ source(paste0(code_location, '/long_model_report_stats.R'))
 source(paste0(code_location, '/diff_node_clust.R'))
 source(paste0(code_location, '/brain_region_ggseg.R'))
 source(paste0(code_location, '/long_mediate_covs.R'))
-source(paste0(code_location, '/long_graph_wcal.R'))
+source(paste0(code_location, '/long_graph.R'))
 source(paste0(code_location, '/graph_all_meas_regs.R'))
 source(paste0(code_location, '/long_descriptive_stats.R'))
 source(paste0(code_location, '/long_cov_beh_corr.R'))
@@ -171,7 +171,7 @@ if (model != 'asym' & trk_sz == 'average' ){
   graph_all_meas_regs(dir_in, measures, hem, trk)
   
   # generate longitudinal plot
-  long_graph_wcal(dir_in, measures, hem, trks, covariates, use_inf)
+  long_graph(dir_in, measures, hem, trks, covariates, use_inf)
   
   # generate descriptive statistics
   long_descriptive_stats(dir_in, measures, hem, trks, covariates, beh_names, med_names, use_inf)
