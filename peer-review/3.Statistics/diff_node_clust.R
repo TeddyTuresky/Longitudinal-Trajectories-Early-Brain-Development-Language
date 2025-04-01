@@ -149,14 +149,14 @@ diff_node_clust <- function(diff_clus_elem, stats_sum, meas, hem, trk, dir_in, b
         
         avg_stats <- matrix(nrow = 2, ncol = 1)
         if (feat == 'int'){
-          avg_stats[1,1] <- mean(x_est_beh[sig_nodes,j])
-          avg_stats[2,1] <- mean(x_p_beh[sig_nodes,j])
+          avg_stats[1,1] <- mean(x_est_beh[sig_nodes])
+          avg_stats[2,1] <- mean(x_p_beh[sig_nodes])
         } else if (feat == 'slope'){
-          avg_stats[1,1] <- mean(x_est_ageXbeh[sig_nodes,j])
-          avg_stats[2,1] <- mean(x_p_ageXbeh[sig_nodes,j])
+          avg_stats[1,1] <- mean(x_est_ageXbeh[sig_nodes])
+          avg_stats[2,1] <- mean(x_p_ageXbeh[sig_nodes])
         } else if (feat == '50mo'){
-          avg_stats[1,1] <- mean(x_est_brain_beh[sig_nodes,j])
-          avg_stats[2,1] <- mean(x_p_brain_beh[sig_nodes,j])      
+          avg_stats[1,1] <- mean(x_est_brain_beh[sig_nodes])
+          avg_stats[2,1] <- mean(x_p_brain_beh[sig_nodes])      
         }
         
         print(paste0('Stats for nodes: ', paste(c(sig_nodes+5), collapse = ' ')))
